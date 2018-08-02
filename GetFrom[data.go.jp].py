@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# オープンデータカタログサイト data.go.jp からデータを取得する
+# data.go.jp からデータを取得する
 #-------------------------------------------------------------------------------
 
 #ライブラリ類のインポート
@@ -23,18 +23,18 @@ sorted(keyList)
 # 受信データを出力する
 fOutput = open("..\[data.go.jp]package_list.txt", "w")
 
-# そのまま出力
+# 受信データをそのまま出力
 fOutput.write("# RowData\n")
 fOutput.write(req.text + "\n\n")
 
-# Key項目のみ出力
+# 受信データのKey項目のみ出力
 fOutput.write("# keys\n")
 nLine = 0
 for key in keyList:
 	nLine+=1
 	fOutput.write(str(nLine) + ": " + key + "\n")
 
-# Key項目と対応するValue項目を出力
+# 受信データのKey項目と対応するValue項目を出力
 fOutput.write("\n# Keys & Values\n")
 nLine = 0
 for key in keyList:

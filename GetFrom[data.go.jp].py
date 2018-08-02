@@ -22,37 +22,33 @@ sorted(keyList)
 
 # 受信データを出力する
 fOutput = open("..\[data.go.jp]package_list.txt", "w")
-fOutput.writelines("# keys\n")
 
+# そのまま出力
+fOutput.write("# RowData\n")
+fOutput.write(req.text + "\n\n")
+
+# Key項目のみ出力
+fOutput.write("# keys\n")
 nLine = 0
 for key in keyList:
 	nLine+=1
 	fOutput.write(str(nLine) + ": " + key + "\n")
-	
-fOutput.write("\n# Values\n")
+
+# Key項目と対応するValue項目を出力
+fOutput.write("\n# Keys & Values\n")
 nLine = 0
 for key in keyList:
 	nLine+=1
 	fOutput.write(str(nLine) + ": " + key +"\n\t"+ str(data[key]) + "\n")
-	if str(data[key]) == "result":
-		for value in str(data[key]):
-			fOutput.write("\n\t"+ str(value) + "\n")
+	if key == "result":
+		s = str(data[key])
+		s = s.replace("[","")
+		s = s.replace("]","")
+		l = s.split(', ')
+		for ll in l:
+			ll = ll.replace("'","")
+			fOutput.write("\t" + ll + "\n")
 
 fOutput.close()
 
-
-#print("Result: ", req.text)
-#fOutput.writelines("Result: ", req.text)
-#
-#package_list
-#for key in keyList:
-#	with open("..\keys.txt", mode='a') as f1:
-#		f1.write(key)
-#    
-#fOutput = open("..\output.txt", "w")
-#json.dump(data, fOutput)
-
-
-#print('json_dict:{}'.format(type(data)))
-#print("Result: ", req.text)
 #-------------------------------------------------------------------------------

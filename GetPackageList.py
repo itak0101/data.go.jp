@@ -20,7 +20,7 @@ keyList = data.keys()
 sorted(keyList)
 
 # 出力ファイルのオープン
-fOutput = open("..\[data.go.jp]package_list.txt", "w")
+fOutput = open("[data.go.jp]_PackageList.txt", "w")
 
 # 受信データをそのまま出力
 fOutput.write("#---- Request ----\n\n")

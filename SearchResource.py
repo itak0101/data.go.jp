@@ -7,8 +7,8 @@ import requests # Apache2 Licensed HTTP library 要インストール(pip instal
 import json     # Data Format
 
 # ユーザー設定値
-SearchWord = "統計"
-SearchCount = "20"
+SearchWord = "統計" #検索文字列
+SearchCount = "20"  #検索件数
 
 # APIの設定
 api = "http://www.data.go.jp/data/api/action/resource_search?query={query}&limit={limit}"

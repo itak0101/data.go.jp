@@ -1,6 +1,9 @@
 #-------------------------------------------------------------------------------
 # data.go.jp から PackageListを取得する (WebAPIを利用)
 #-------------------------------------------------------------------------------
+# API仕様書
+# http://www.data.go.jp/for-developer/for-developer/
+#-------------------------------------------------------------------------------
 
 #ライブラリ類のインポート
 import requests # Apache2 Licensed HTTP library 要インストール(pip install requests)
@@ -27,7 +30,7 @@ fOutput.write("#---- Request ----\n\n")
 fOutput.write(url + "\n\n\n")
 
 # 受信データをそのまま出力
-fOutput.write("#---- Response (RowData) ----\n\n")
+fOutput.write("#---- Response (RawData) ----\n\n")
 fOutput.write(req.text + "\n\n")
 
 # 受信データのKey項目とそれに対応するValue項目を出力

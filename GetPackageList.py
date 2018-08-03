@@ -1,14 +1,13 @@
 #-------------------------------------------------------------------------------
-# data.go.jp からデータを取得する
+# data.go.jp から PackageListを取得する (WebAPI)を利用
 #-------------------------------------------------------------------------------
 
 #ライブラリ類のインポート
 import requests # Apache2 Licensed HTTP library 要インストール(pip install requests)
 import json     # Data Format
 
-# APIキーの指定
-apikey = "http://www.data.go.jp/data/api/action/package_list"
-url = apikey
+# URLの設定
+url = "http://www.data.go.jp/data/api/action/package_list"
 
 # APIにリクエストを送信する(実行結果・応答データがreqの中に格納される)
 req = requests.get(url)

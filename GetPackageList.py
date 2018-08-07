@@ -36,6 +36,15 @@ fOutput.write(req.text + "\n\n")
 # 受信データのKey項目とそれに対応するValue項目を出力
 fOutput.write("\n#---- Responce (Keys & Values) ----\n")
 nLine = 0
+
+# 配列の内容を順に出力する (パターン1)
+# しかしdata.go.jpが配列の要素数を返してくれないため何件あるか不明
+# 以下では仮に10番まで取り出す形にしている
+#for i in range(10):
+#	fOutput.write("\n" + data["result"][i])
+	
+# 配列の内容を順に出力する (パターン2)
+# 文字列処理によって前件出力する
 for key in keyList:
 	nLine+=1
 	fOutput.write("\n")

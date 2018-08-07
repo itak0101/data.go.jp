@@ -46,6 +46,7 @@ for key in data.keys():
 	fOutput.write("Value: " + str(data[key]) + "\n")
 	if str(key) == "result":
 		count = str(data["result"]["count"])
+		fOutput.write("result:results:count: " + count + "\n")
 		for i in range(int(SearchCount)):
 			fOutput.write("result:results:name: " + str(data["result"]["results"][int(i)]["name"]) + "\n")
 
